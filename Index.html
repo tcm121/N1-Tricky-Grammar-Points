@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Grammar Study Cards</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #4a5568;
+            --border-color: #e2e8f0;
+            
+            /* Theme Colors */
+            --c-green: #2e7d32;
+            --c-green-bg: #e8f5e9;
+            --c-blue: #1565c0;
+            --c-blue-bg: #e3f2fd;
+            --c-purple: #6a1b9a;
+            --c-purple-bg: #f3e5f5;
+            --c-orange: #d84315;
+            --c-orange-bg: #fbe9e7;
+            --c-teal: #00695c;
+            --c-teal-bg: #e0f2f1;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+            color: #1a202c;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            padding: 28px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 20px;
+        }
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 90px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            transform: rotateY(180deg);
+            background-color: var(--card-bg);
+            overflow-y: auto;
+        }
+
+        /* Front Styling */
+        .card-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a202c;
+            letter-spacing: -0.02em;
+        }
+
+        .click-hint {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #718096;
+            margin-top: 14px;
+            align-self: flex-end;
+        }
+
+        /* Back Styling */
+        .summary-box {
+            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+            border-left: 5px solid #4f46e5;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .summary-title {
+            font-weight: 700;
+            color: #3730a3;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .summary-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #312e81;
+        }
+
+        .summary-list li {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        /* Sub-section Blocks & Color Themes */
+        .grammar-section {
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+            border: 1px solid transparent;
+        }
+
+        .theme-green {
+            background-color: #fafdfa;
+            border-color: #c8e6c9;
+        }
+        .theme-green .section-title {
+            background-color: var(--c-green-bg);
+            color: var(--c-green);
+        }
+
+        .theme-blue {
+            background-color: #f4f8fc;
+            border-color: #bbdefb;
+        }
+        .theme-blue .section-title {
+            background-color: var(--c-blue-bg);
+            color: var(--c-blue);
+        }
+
+        .theme-purple {
+            background-color: #faf5fc;
+            border-color: #e1bee7;
+        }
+        .theme-purple .section-title {
+            background-color: var(--c-purple-bg);
+            color: var(--c-purple);
+        }
+
+        .theme-orange {
+            background-color: #fff9f8;
+            border-color: #ffccbc;
+        }
+        .theme-orange .section-title {
+            background-color: var(--c-orange-bg);
+            color: var(--c-orange);
+        }
+
+        .theme-teal {
+            background-color: #f2f9f8;
+            border-color: #b2dfdb;
+        }
+        .theme-teal .section-title {
+            background-color: var(--c-teal-bg);
+            color: var(--c-teal);
+        }
+
+        .section-title {
+            display: inline-block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .grammar-block {
+            margin-bottom: 12px;
+        }
+
+        .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #4a5568;
+            background-color: #edf2f7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        .example-block {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            padding: 14px 16px;
+            margin-top: 14px;
+            border-radius: 10px;
+        }
+
+        .jp-sentence {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .highlight {
+            color: #d97706;
+            font-weight: 700;
+            background-color: #fef3c7;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        .en-sentence {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .vocab-entry {
+            font-size: 0.9rem;
+            color: #2d3748;
+            line-height: 1.6;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 8px;
+        }
+
+        .vocab-entry .nuance {
+            font-style: italic;
+            color: #718096;
+            display: block;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Japanese Grammar Notebook</h1>
+
+<div class="container">
+
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front">
+                <div class="card-title">にかぎって</div>
+                <div class="click-hint">Click to flip & expand ↵</div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Summary</div>
+                    <ul class="summary-list">
+                        <li><strong>Unfortunate Timing:</strong> Bad luck happening precisely when least convenient.</li>
+                        <li><strong>Special Exception / Trust:</strong> Defending someone based on exceptional character ("Of all people, not them").</li>
+                        <li><strong>Limited/Exclusive Focus:</strong> "Only" or "specifically target" a particular group/time.</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-section theme-orange">
+                    <div class="section-title">1. Unfortunate Timing / Bad Luck</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses irritation or annoyance when a bad event happens at the exact worst possible moment.</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun (Time/Situation) + <strong>にかぎって</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Coincidences where luck is against you (e.g., forgetting an umbrella only on days it rains).</p>
+                        <p><em>When NOT to use:</em> General planned events or happy surprises.</p>
+                        
+                        <div class="example-block">
+                            <div class="jp-sentence">傘を持っていない日に<span class="highlight">限って</span>、雨が降る。</div>
+                            <div class="en-sentence">It rains specifically on days when I don't have an umbrella.</div>
+                            <div class="vocab-entry">
+                                傘 = かさ = umbrella<br>
+                                <span class="nuance">Highlights the frustrating irony of the timing.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-purple">
+                    <div class="section-title">2. Special Exception / Strong Trust</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Asserts that because a person/thing is special, a bad rumor or negative action cannot possibly apply to them.</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun (Person) + <strong>にかぎって</strong> + Negative verb (〜ない / 〜はずがない)</p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Expressing absolute belief in someone or highlighting an exceptional standard.</p>
+                        <p><em>When NOT to use:</em> Neutral descriptions of strangers.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">うちの子に<span class="highlight">かぎって</span>、そんな悪いことをするはずがない。</div>
+                            <div class="en-sentence">My child, of all kids, would never do such a bad thing.</div>
+                            <div class="vocab-entry">
+                                子 = こ = child<br>
+                                <span class="nuance">Emphasizes strong parental trust as a total exception to bad behavior.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-teal">
+                    <div class="section-title">3. Target Restriction / Exclusive Focus</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Limits a condition or benefit exclusively to a specific category or target group.</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun + <strong>にかぎって</strong> (or にかぎり)</p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Announcements, rules, or special offers targeting a specific group.</p>
+                        <p><em>When NOT to use:</em> General rules that apply to everyone.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">本日ご来店のお客様に<span class="highlight">かぎって</span>、全商品が１０％割引になります。</div>
+                            <div class="en-sentence">Exclusively for customers who visit our store today, all items are 10% off.</div>
+                            <div class="vocab-entry">
+                                来店 = らいてん = visiting a store<br>
+                                割引 = わりびき = discount<br>
+                                <span class="nuance">Formal restriction limiting the benefit strictly to today's visitors.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front">
+                <div class="card-title">にあたって ・ にあって ・ とあって</div>
+                <div class="click-hint">Click to flip & expand ↵</div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Summary</div>
+                    <ul class="summary-list">
+                        <li><strong>にあたって:</strong> Preparation before a major milestone</li>
+                        <li><strong>にあって:</strong> Behavior under specific / extreme context</li>
+                        <li><strong>とあって:</strong> Natural result of special situation</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-section theme-green">
+                    <div class="section-title">にあたって / にあたり</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Marks forward-looking action, preparation, or mindset required immediately before taking on an important, formal, or life-changing event. It derives from the verb 当たる (to face / to encounter).</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun / Verb (dictionary form) + <strong>にあたって</strong> (or にあたり for more formal text)</p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Milestone events, official transitions, or public occasions (e.g., starting a business, moving, signing a contract, entering university, opening a ceremony).</p>
+                        <p><em>When NOT to use:</em> Everyday, trivial, or routine actions. Writing 「朝ごはんは食べるにあたって」 (Before eating breakfast) sounds unnatural because breakfast is not a solemn milestone. Additionally, it generally cannot take negative verbs.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">新事業を始める<span class="highlight">にあたって</span>、十分な資金計画を立てる必要がある。</div>
+                            <div class="en-sentence">On the occasion of starting a new business, it is necessary to make a sufficient financial plan.</div>
+                            <div class="vocab-entry">
+                                事業 = じぎょう = business, enterprise<br>
+                                資金 = しきん = funds, capital<br>
+                                <span class="nuance">Focuses on deliberate preparation prior to a major project.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-blue">
+                    <div class="section-title">にあって</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Sets a specific, often extreme or unusual state, environment, or position, and describes how an action or state unfolds directly within those bounds. It derives from the verb 在る (to exist / to be located in a condition).</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun + <strong>にあって</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Formal speeches, literary writing, news reporting, or written essays to highlight a background condition or role (e.g., during a war, under strict constraints, in a position of leadership). It is frequently paired with も (〜にあっても) to mean "even under such conditions."</p>
+                        <p><em>When NOT to use:</em> Casual spoken Japanese or simple temporal expressions (e.g., use に or の時に for standard time frames like "when I was a student").</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">このような緊急事態<span class="highlight">にあっても</span>、彼は冷静さを失わなかった。</div>
+                            <div class="en-sentence">Even in such an emergency situation, he did not lose his composure.</div>
+                            <div class="vocab-entry">
+                                緊急事態 = きんきゅうじたい = emergency situation<br>
+                                冷静 = れいせい = calm, composed<br>
+                                <span class="nuance">Sets an intense backdrop to highlight his behavior within it.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-orange">
+                    <div class="section-title">とあって</div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>States that because a particular, uncommon, or special circumstance exists, a logical or natural outcome follows. It stems from the verb 有る (to exist) preceded by the quotation/state particle と.</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun / Verb (plain form) + <strong>とあって</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Objective reporting of a special cause-and-effect relationship (e.g., rare fine weather causing crowded parks, a massive discount causing long queues, a visit by a celebrity attracting crowds).</p>
+                        <p><em>When NOT to use:</em> Speaker-centric actions, personal requests, commands, or expressions of personal volition (e.g., 「雨とあって、傘を買いなさい」 is incorrect). It focuses purely on observing a public or natural consequence.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">久しぶりの晴天<span class="highlight">とあって</span>、公園は多くの家族連れで賑わっている。</div>
+                            <div class="en-sentence">Because it's the first fine weather in a long time, the park is crowded with families.</div>
+                            <div class="vocab-entry">
+                                晴天 = せいてん = fine weather<br>
+                                賑わう = にぎわう = to be crowded, to be lively<br>
+                                <span class="nuance">Presents the rare good weather as the direct reason for the crowded park.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleCard(cardElement) {
+        const backFace = cardElement.querySelector('.card-back');
+        
+        if (!cardElement.classList.contains('flipped')) {
+            cardElement.style.height = backFace.scrollHeight + 'px';
+            cardElement.classList.add('flipped');
+        } else {
+            cardElement.style.height = 'auto';
+            cardElement.classList.remove('flipped');
+        }
+    }
+</script>
+
+</body>
+</html>

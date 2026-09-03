@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese Grammar Study Cards</title>
+    <title>Japanese Grammar & Vocabulary Notebook</title>
     <style>
         :root {
             --bg-color: #f0f2f5;
@@ -12,7 +12,7 @@
             --text-muted: #4a5568;
             --border-color: #e2e8f0;
             
-            /* Theme Colors */
+            /* Theme Accent Colors */
             --c-green: #2e7d32;
             --c-green-bg: #e8f5e9;
             --c-blue: #1565c0;
@@ -23,6 +23,14 @@
             --c-orange-bg: #fbe9e7;
             --c-teal: #00695c;
             --c-teal-bg: #e0f2f1;
+            --c-indigo: #4338ca;
+            --c-indigo-bg: #eef2ff;
+            --c-amber: #b45309;
+            --c-amber-bg: #fef3c7;
+            --c-emerald: #047857;
+            --c-emerald-bg: #d1fae5;
+            --c-sky: #0369a1;
+            --c-sky-bg: #e0f2fe;
         }
 
         body {
@@ -110,6 +118,12 @@
             letter-spacing: -0.02em;
         }
 
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
         .click-hint {
             font-size: 0.85rem;
             font-weight: 600;
@@ -118,7 +132,7 @@
             align-self: flex-end;
         }
 
-        /* Back Styling */
+        /* Back Summary Box */
         .summary-box {
             background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
             border-left: 5px solid #4f46e5;
@@ -147,7 +161,14 @@
             line-height: 1.4;
         }
 
-        /* Sub-section Blocks & Color Themes */
+        .summary-text {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #312e81;
+            line-height: 1.5;
+        }
+
+        /* Sub-section Blocks & Themes */
         .grammar-section {
             border-radius: 12px;
             padding: 16px;
@@ -155,50 +176,20 @@
             border: 1px solid transparent;
         }
 
-        .theme-green {
-            background-color: #fafdfa;
-            border-color: #c8e6c9;
-        }
-        .theme-green .section-title {
-            background-color: var(--c-green-bg);
-            color: var(--c-green);
-        }
+        .theme-green { background-color: #fafdfa; border-color: #c8e6c9; }
+        .theme-green .section-title { background-color: var(--c-green-bg); color: var(--c-green); }
 
-        .theme-blue {
-            background-color: #f4f8fc;
-            border-color: #bbdefb;
-        }
-        .theme-blue .section-title {
-            background-color: var(--c-blue-bg);
-            color: var(--c-blue);
-        }
+        .theme-blue { background-color: #f4f8fc; border-color: #bbdefb; }
+        .theme-blue .section-title { background-color: var(--c-blue-bg); color: var(--c-blue); }
 
-        .theme-purple {
-            background-color: #faf5fc;
-            border-color: #e1bee7;
-        }
-        .theme-purple .section-title {
-            background-color: var(--c-purple-bg);
-            color: var(--c-purple);
-        }
+        .theme-purple { background-color: #faf5fc; border-color: #e1bee7; }
+        .theme-purple .section-title { background-color: var(--c-purple-bg); color: var(--c-purple); }
 
-        .theme-orange {
-            background-color: #fff9f8;
-            border-color: #ffccbc;
-        }
-        .theme-orange .section-title {
-            background-color: var(--c-orange-bg);
-            color: var(--c-orange);
-        }
+        .theme-orange { background-color: #fff9f8; border-color: #ffccbc; }
+        .theme-orange .section-title { background-color: var(--c-orange-bg); color: var(--c-orange); }
 
-        .theme-teal {
-            background-color: #f2f9f8;
-            border-color: #b2dfdb;
-        }
-        .theme-teal .section-title {
-            background-color: var(--c-teal-bg);
-            color: var(--c-teal);
-        }
+        .theme-teal { background-color: #f2f9f8; border-color: #b2dfdb; }
+        .theme-teal .section-title { background-color: var(--c-teal-bg); color: var(--c-teal); }
 
         .section-title {
             display: inline-block;
@@ -209,9 +200,7 @@
             margin-bottom: 16px;
         }
 
-        .grammar-block {
-            margin-bottom: 12px;
-        }
+        .grammar-block { margin-bottom: 12px; }
 
         .label {
             display: inline-block;
@@ -277,11 +266,113 @@
             display: block;
             margin-top: 4px;
         }
+
+        /* Vocabulary Card Grid Styling */
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .badge-nature { background-color: var(--c-purple-bg); color: var(--c-purple); }
+        .badge-mastery { background-color: var(--c-amber-bg); color: var(--c-amber); }
+        .badge-domain { background-color: var(--c-emerald-bg); color: var(--c-emerald); }
+        .badge-authority { background-color: var(--c-sky-bg); color: var(--c-sky); }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .vocab-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .vocab-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 6px;
+            margin-bottom: 4px;
+        }
+
+        .vocab-word {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .vocab-kana {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .vocab-english {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--c-indigo);
+        }
+
+        .vocab-nuance {
+            font-size: 0.85rem;
+            color: #475569;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Matrix Comparison Table */
+        .matrix-container {
+            overflow-x: auto;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: 700;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .matrix-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+        }
+
+        .matrix-table tr:last-child td { border-bottom: none; }
+        .matrix-word { font-weight: 700; color: #0f172a; }
     </style>
 </head>
 <body>
 
-<h1>Japanese Grammar Notebook</h1>
+<h1>Japanese Grammar & Vocabulary Notebook</h1>
 
 <div class="container">
 
@@ -409,7 +500,7 @@
                         <p>Marks forward-looking action, preparation, or mindset required immediately before taking on an important, formal, or life-changing event. It derives from the verb 当たる (to face / to encounter).</p>
                         
                         <div class="label">Structure</div>
-                        <p>Noun / Verb (dictionary form) + <strong>にあたって</strong> (or にあたり for more formal text)</p>
+                        <p>Noun / Verb (dictionary form) + <strong>にかぎって</strong> (or にあたり for more formal text)</p>
                         
                         <div class="label">Usage Notes & Nuance</div>
                         <p><em>When to use:</em> Milestone events, official transitions, or public occasions (e.g., starting a business, moving, signing a contract, entering university, opening a ceremony).</p>
@@ -475,6 +566,164 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front">
+                <div class="card-title">Talent & Expertise Words</div>
+                <div class="card-subtitle">天才, 鬼才, 逸材, 達人, 職人, 巨匠, 大家, 熟練者, 玄人, 有識者</div>
+                <div class="click-hint">Click to flip & expand ↵</div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Summary</div>
+                    <p class="summary-text">Distinguishes 10 terms for high talent and expertise based on whether the focus is on <strong>raw innate ability</strong>, <strong>honed practical craft</strong>, <strong>mastery/status within a field</strong>, or <strong>academic authority</strong>.</p>
+                </div>
+
+                <div class="category-badge badge-nature">1. Innate Gift & Natural Talent</div>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">天才</span>
+                            <span class="vocab-kana">てんさい</span>
+                        </div>
+                        <div class="vocab-english">Genius / Prodigy</div>
+                        <div class="vocab-nuance">Extraordinary natural intellect or talent from birth.</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">鬼才</span>
+                            <span class="vocab-kana">きさい</span>
+                        </div>
+                        <div class="vocab-english">Uncanny / Wild Genius</div>
+                        <div class="vocab-nuance">Phenomenal, unconventional genius that shocks or defies normal thinking.</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">逸材</span>
+                            <span class="vocab-kana">いつざい</span>
+                        </div>
+                        <div class="vocab-english">Outstanding Talent / Gem</div>
+                        <div class="vocab-nuance">An exceptionally gifted individual, often framed as a rare find or candidate.</div>
+                    </div>
+                </div>
+
+                <div class="category-badge badge-mastery">2. High Skill & Practical Mastery</div>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">達人</span>
+                            <span class="vocab-kana">たつじん</span>
+                        </div>
+                        <div class="vocab-english">Master / Expert Practitioner</div>
+                        <div class="vocab-nuance">Reached the pinnacle of practical skill in a discipline (martial arts, games).</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">職人</span>
+                            <span class="vocab-kana">しょくにん</span>
+                        </div>
+                        <div class="vocab-english">Artisan / Craftsman</div>
+                        <div class="vocab-nuance">Dedicated manual craftsman focusing on physical creation and exact precision.</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">熟練者</span>
+                            <span class="vocab-kana">じゅくれんしゃ</span>
+                        </div>
+                        <div class="vocab-english">Experienced Veteran / Skilled Hand</div>
+                        <div class="vocab-nuance">Skill built specifically through years of practice and repeated experience.</div>
+                    </div>
+                </div>
+
+                <div class="category-badge badge-domain">3. Grand Masters & Field Authorities</div>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">巨匠</span>
+                            <span class="vocab-kana">きょしょう</span>
+                        </div>
+                        <div class="vocab-english">Maestro / Great Master</div>
+                        <div class="vocab-nuance">Revered authority specifically in creative arts, cinema, or classical music.</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">大家</span>
+                            <span class="vocab-kana">たいか / おおや</span>
+                        </div>
+                        <div class="vocab-english">Leading Figure / Authority</div>
+                        <div class="vocab-nuance">Leading figure with supreme standing in a traditional field (literature, calligraphy).</div>
+                    </div>
+                </div>
+
+                <div class="category-badge badge-authority">4. Knowledge & Insider Experience</div>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">玄人</span>
+                            <span class="vocab-kana">くろうと</span>
+                        </div>
+                        <div class="vocab-english">Insider / Pro (vs. Amateur)</div>
+                        <div class="vocab-nuance">A seasoned professional/insider with deep domain savvy, opposite of 素人 (shiroto).</div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-head">
+                            <span class="vocab-word">有識者</span>
+                            <span class="vocab-kana">ゆうしきしゃ</span>
+                        </div>
+                        <div class="vocab-english">Expert / Knowledgeable Person</div>
+                        <div class="vocab-nuance">A well-informed expert consulted in official settings, policy committees, or news.</div>
+                    </div>
+                </div>
+
+                <div class="matrix-container">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Primary Origin</th>
+                                <th>Typical Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="matrix-word">天才 / 鬼才</td>
+                                <td>Natural Ability</td>
+                                <td>General intellect, unconventional creativity</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">達人 / 職人</td>
+                                <td>Physical Training / Craft</td>
+                                <td>Martial arts, trades, handiwork</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">巨匠 / 大家</td>
+                                <td>Public Acclaim & Prestige</td>
+                                <td>Fine arts, film, literature, high culture</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">有識者 / 玄人</td>
+                                <td>Knowledge & Experience</td>
+                                <td>Formal consultations, niche domains vs. amateurs</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="click-hint">Click to flip back ↵</div>

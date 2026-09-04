@@ -31,11 +31,16 @@
             --c-emerald-bg: #d1fae5;
             --c-sky: #0369a1;
             --c-sky-bg: #e0f2fe;
+            --c-red: #c53030;
+            --c-red-bg: #fff5f5;
+            --c-rose: #9f1239;
+            --c-rose-bg: #ffe4e6;
 
             /* Front Card Pastel Themes */
             --pastel-pink: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
             --pastel-purple: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
             --pastel-blue: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            --pastel-rose: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
         }
 
         body {
@@ -118,6 +123,11 @@
             border: 1px solid #bae6fd;
         }
 
+        .card-front.pastel-4 {
+            background: var(--pastel-rose);
+            border: 1px solid #fecdd3;
+        }
+
         .card-back {
             position: absolute;
             top: 0;
@@ -154,6 +164,11 @@
             border-radius: 0 10px 10px 0;
         }
 
+        .summary-box.theme-rose-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe4e6 100%);
+            border-left: 5px solid #e11d48;
+        }
+
         .summary-title {
             font-weight: 700;
             color: #3730a3;
@@ -161,6 +176,10 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+
+        .theme-rose-box .summary-title {
+            color: #9f1239;
         }
 
         .summary-list {
@@ -173,6 +192,25 @@
         .summary-list li {
             margin-bottom: 4px;
             line-height: 1.4;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        .summary-item {
+            font-size: 0.85rem;
+            color: #881337;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(225, 29, 72, 0.15);
+        }
+
+        .summary-item strong {
+            color: #9f1239;
         }
 
         .summary-text {
@@ -205,6 +243,27 @@
         .theme-teal { background-color: #f2f9f8; border-color: #b2dfdb; }
         .theme-teal .section-title { background-color: var(--c-teal-bg); color: var(--c-teal); }
 
+        .theme-amber { background-color: #fffdf5; border-color: #fef08a; }
+        .theme-amber .section-title { background-color: var(--c-amber-bg); color: var(--c-amber); }
+
+        .theme-red { background-color: #fff5f5; border-color: #feb2b2; }
+        .theme-red .section-title { background-color: var(--c-red-bg); color: var(--c-red); }
+
+        .theme-indigo { background-color: #f8fafc; border-color: #c7d2fe; }
+        .theme-indigo .section-title { background-color: var(--c-indigo-bg); color: var(--c-indigo); }
+
+        .theme-rose { background-color: #fff1f2; border-color: #fecdd3; }
+        .theme-rose .section-title { background-color: var(--c-rose-bg); color: var(--c-rose); }
+
+        .section-header-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
         .section-title {
             display: inline-block;
             font-size: 1rem;
@@ -212,6 +271,20 @@
             padding: 4px 10px;
             border-radius: 6px;
             margin-bottom: 12px;
+        }
+
+        .section-header-wrap .section-title {
+            margin-bottom: 0;
+        }
+
+        .nuance-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #475569;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 3px 8px;
+            border-radius: 16px;
         }
 
         .grammar-block { margin-bottom: 10px; }
@@ -254,9 +327,9 @@
         }
 
         .highlight {
-            color: #d97706;
+            color: #be123c;
             font-weight: 700;
-            background-color: #fef3c7;
+            background-color: #ffe4e6;
             padding: 0 3px;
             border-radius: 3px;
         }
@@ -399,6 +472,7 @@
 
 <div class="container">
 
+    <!-- Card 1 -->
     <div class="card-container">
         <div class="card" onclick="toggleCard(this)">
             
@@ -496,6 +570,7 @@
         </div>
     </div>
 
+    <!-- Card 2 -->
     <div class="card-container">
         <div class="card" onclick="toggleCard(this)">
             
@@ -595,6 +670,7 @@
         </div>
     </div>
 
+    <!-- Card 3 -->
     <div class="card-container">
         <div class="card" onclick="toggleCard(this)">
             
@@ -744,6 +820,203 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Card 4 (New) -->
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front pastel-4">
+                <div class="card-title">Extreme Degree & Pinnacles</div>
+                <div class="card-subtitle">といったらない ・ かぎりだ ・ 極まる / 極まりない ・ てたまらない / てならない ・ の至り ・ にたえない</div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box theme-rose-box">
+                    <div class="summary-title">Quick Nuance Matrix</div>
+                    <div class="summary-grid">
+                        <div class="summary-item"><strong>といったらない:</strong> External scale / Indescribable</div>
+                        <div class="summary-item"><strong>かぎりだ:</strong> Peak subjective internal emotion</div>
+                        <div class="summary-item"><strong>極まる/極まりない:</strong> Peak objective condition</div>
+                        <div class="summary-item"><strong>てたまらない/てならない:</strong> Uncontrollable urge</div>
+                        <div class="summary-item"><strong>の至り:</strong> Formal pinnacle of social status</div>
+                        <div class="summary-item"><strong>にたえない:</strong> Uncontainable / Unbearable</div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-teal">
+                    <div class="section-header-wrap">
+                        <div class="section-title">1. といったらない</div>
+                        <span class="nuance-tag">External Scale / Indescribable</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses an extreme degree that words cannot adequately describe ("unutterably," "beyond description").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun / Noun-equivalent / Adjective (i/na) + <strong>といったらない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Highlights external scale, magnitude, or vivid scenes that surpass linguistic description. Works for objective conditions or recounting impactful events.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">試験に合格したときの彼の嬉しさ<span class="highlight">といったらない</span>。</div>
+                            <div class="en-sentence">When he passed the exam, his sheer joy was beyond description.</div>
+                            <div class="vocab-entry">
+                                合格 = ごうかく = to pass an exam<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                嬉しさ = うれしさ = joy, gladness<br>
+                                <span class="nuance">Frames his observable happiness as overflowing beyond what words can capture.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-amber">
+                    <div class="section-header-wrap">
+                        <div class="section-title">2. かぎりだ</div>
+                        <span class="nuance-tag">Internal Subjective Peak</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses that a personal feeling is at its maximum boundary ("extremely," "feeling the utmost...").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Subjective Emotion Adjectives (i-adj / na-adj) + <strong>かぎりだ</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Strictly marks the internal limit of a speaker's subjective emotion (e.g., 嬉しい, 悲しい, 心強い). Formal and sincere tone.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">遠方から友人が駆けつけてくれて、心強い<span class="highlight">かぎりだ</span>。</div>
+                            <div class="en-sentence">Having my friend rush over from afar makes me feel immensely reassured.</div>
+                            <div class="vocab-entry">
+                                駆けつける = かけつける = to rush to a location<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                心強い = こころづよい = reassuring, heartening<br>
+                                <span class="nuance">Expresses that internal emotional capacity for reassurance is completely full.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-purple">
+                    <div class="section-header-wrap">
+                        <div class="section-title">3. 極まる / 極まりない</div>
+                        <span class="nuance-tag">Objective Peak / Critical Tone</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses that an objective state, quality, or behavior has reached its absolute peak or limit ("extremely," "in the extreme").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Na-adjective stem (＋な) + <strong>極まる</strong> OR Na-adjective stem + <strong>極まりない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Highly formal, written, or literary. Frequently conveys sharp criticism or formal censure toward bad manners or dangerous behavior rather than internal emotions.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">泥酔して公道で騒ぐとは、失礼<span class="highlight">極まりない</span>態度だ。</div>
+                            <div class="en-sentence">Getting dead drunk and causing a racket on a public street is an attitude that is rude in the extreme.</div>
+                            <div class="vocab-entry">
+                                泥酔 = でいすい = dead drunk, heavily intoxicated<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                公道 = こうどう = public road, highway<br>
+                                <span class="nuance">Evaluates an external behavior at the objective ceiling of rudeness.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-red">
+                    <div class="section-header-wrap">
+                        <div class="section-title">4. てたまらない / てならない</div>
+                        <span class="nuance-tag">Uncontrollable Urge / Sensation</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses an unmanageable impulse, emotion, or physical sensation ("cannot help but feel," "unbearably").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb/Adjective (Te-form) + <strong>たまらない</strong> / <strong>ならない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Spontaneous loss of emotional/physical control. <strong>てたまらない</strong> leans toward unbearable physical sensations or strong desires; <strong>てならない</strong> leans toward irresistible psychological or intuitive feelings.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">故郷の母の病状がどうなっているか、心配で<span class="highlight">ならない</span>。</div>
+                            <div class="en-sentence">I cannot help but feel deeply anxious about my mother's illness back home.</div>
+                            <div class="vocab-entry">
+                                故郷 = こきょう = hometown, birthplace<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                病状 = びょうじょう = medical condition<br>
+                                <span class="nuance">Emphasizes an irresistible psychological anxiety welling up naturally.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-indigo">
+                    <div class="section-header-wrap">
+                        <div class="section-title">5. の至り (のいたり)</div>
+                        <span class="nuance-tag">Formal Pinnacle of Status/Honor</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses the ultimate summit of a prestigious emotional or social experience ("the height of...", "the utmost...").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Abstract Noun (e.g., 光栄, 若気, 赤面) + <strong>の至り</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> High-register polite idiom reserved for pinnacles of honor, intense shame, or youthful indiscretion. Functions through fixed collocations.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">このような栄誉ある賞をいただき、光栄<span class="highlight">の至り</span>でございます。</div>
+                            <div class="en-sentence">Receiving such a prestigious award is the absolute height of honor for me.</div>
+                            <div class="vocab-entry">
+                                栄誉 = えいよ = honor, glory<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                光栄 = こうえい = honor, privilege<br>
+                                <span class="nuance">Pinnacle register expressing the absolute summit of formal appreciation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-rose">
+                    <div class="section-header-wrap">
+                        <div class="section-title">6. にたえない</div>
+                        <span class="nuance-tag">Uncontainable Emotion / Unbearable Sight</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses that a profound emotion cannot be contained, or that a situation is too tragic/appalling to perceive ("cannot suppress," "unbearable to...").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Abstract Emotion Noun OR Perception Verb (Dictionary form) + <strong>にたえない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> With emotion nouns (e.g., 感謝, 痛恨), it marks noble/overwhelming feelings. With perception verbs (e.g., 見る, 聞く), it marks a scene so tragic it cannot be endured.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">事故の惨状は目も当てられず、真に見る<span class="highlight">にたえない</span>光景だった。</div>
+                            <div class="en-sentence">The disastrous scene of the accident was appalling, a sight truly unbearable to look at.</div>
+                            <div class="vocab-entry">
+                                惨状 = さんじょう = disastrous scene, spectacle<br>
+                                <span class="nuance">Word = Kana = English</span><br>
+                                光景 = こうけい = scene, sight<br>
+                                <span class="nuance">Pairs with a perception verb (見る) to highlight a tragic scene impossible to endure visually.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="click-hint">Click to flip back ↵</div>

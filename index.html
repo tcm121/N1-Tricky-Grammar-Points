@@ -6,41 +6,40 @@
     <title>Japanese Grammar & Vocabulary Notebook</title>
     <style>
         :root {
-            --bg-color: #f0f2f5;
+            /* Cohesive Neutral Base */
+            --bg-color: #f1f5f9;
             --card-bg: #ffffff;
-            --text-main: #2d3748;
-            --text-muted: #4a5568;
-            --border-color: #e2e8f0;
-            
-            /* Theme Accent Colors */
-            --c-green: #2e7d32;
-            --c-green-bg: #e8f5e9;
-            --c-blue: #1565c0;
-            --c-blue-bg: #e3f2fd;
-            --c-purple: #6a1b9a;
-            --c-purple-bg: #f3e5f5;
-            --c-orange: #d84315;
-            --c-orange-bg: #fbe9e7;
-            --c-teal: #00695c;
-            --c-teal-bg: #e0f2f1;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+
+            /* Unified Professional Palette */
+            --c-navy: #1e3a8a;
+            --c-navy-bg: #eff6ff;
+            --c-navy-border: #bfdbfe;
+
+            --c-teal: #0f766e;
+            --c-teal-bg: #f0fdf4;
+            --c-teal-border: #bbf7d0;
+
+            --c-slate: #334155;
+            --c-slate-bg: #f8fafc;
+            --c-slate-border: #e2e8f0;
+
             --c-indigo: #4338ca;
             --c-indigo-bg: #eef2ff;
-            --c-amber: #b45309;
-            --c-amber-bg: #fef3c7;
-            --c-emerald: #047857;
-            --c-emerald-bg: #d1fae5;
-            --c-sky: #0369a1;
-            --c-sky-bg: #e0f2fe;
-            --c-red: #c53030;
-            --c-red-bg: #fff5f5;
-            --c-rose: #9f1239;
-            --c-rose-bg: #ffe4e6;
+            --c-indigo-border: #c7d2fe;
 
-            /* Front Card Pastel Themes */
-            --pastel-pink: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
-            --pastel-purple: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-            --pastel-blue: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-            --pastel-rose: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+            --c-rose: #be123c;
+            --c-rose-bg: #fff1f2;
+            --c-rose-border: #fecdd3;
+
+            /* Card Front Pastel Covers */
+            --pastel-1: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            --pastel-2: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            --pastel-3: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            --pastel-4: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            --pastel-5: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
         }
 
         body {
@@ -56,7 +55,7 @@
 
         h1 {
             margin-bottom: 16px;
-            color: #1a202c;
+            color: #0f172a;
             font-size: 1.5rem;
         }
 
@@ -104,29 +103,15 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            min-height: 40px;
+            min-height: 42px;
         }
 
-        /* Pastel background variants for card front */
-        .card-front.pastel-1 {
-            background: var(--pastel-pink);
-            border: 1px solid #fbcfe8;
-        }
-
-        .card-front.pastel-2 {
-            background: var(--pastel-purple);
-            border: 1px solid #e9d5ff;
-        }
-
-        .card-front.pastel-3 {
-            background: var(--pastel-blue);
-            border: 1px solid #bae6fd;
-        }
-
-        .card-front.pastel-4 {
-            background: var(--pastel-rose);
-            border: 1px solid #fecdd3;
-        }
+        /* Front Theme Variants */
+        .card-front.pastel-1 { background: var(--pastel-1); border: 1px solid #bae6fd; }
+        .card-front.pastel-2 { background: var(--pastel-2); border: 1px solid #bbf7d0; }
+        .card-front.pastel-3 { background: var(--pastel-3); border: 1px solid #cbd5e1; }
+        .card-front.pastel-4 { background: var(--pastel-4); border: 1px solid #ddd6fe; }
+        .card-front.pastel-5 { background: var(--pastel-5); border: 1px solid #fecdd3; }
 
         .card-back {
             position: absolute;
@@ -141,11 +126,11 @@
             padding: 20px;
         }
 
-        /* Front Styling */
+        /* Front Typography */
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #1e293b;
+            color: #0f172a;
             letter-spacing: -0.01em;
         }
 
@@ -155,38 +140,29 @@
             margin-top: 2px;
         }
 
-        /* Back Summary Box */
+        /* Standardized Summary Box */
         .summary-box {
-            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-            border-left: 5px solid #4f46e5;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 5px solid #3b82f6;
             padding: 12px 16px;
             margin-bottom: 20px;
             border-radius: 0 10px 10px 0;
         }
 
-        .summary-box.theme-rose-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe4e6 100%);
-            border-left: 5px solid #e11d48;
-        }
-
         .summary-title {
             font-weight: 700;
-            color: #3730a3;
-            margin-bottom: 6px;
+            color: #1e3a8a;
+            margin-bottom: 8px;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .theme-rose-box .summary-title {
-            color: #9f1239;
-        }
-
         .summary-list {
             margin: 0;
             padding-left: 18px;
-            color: #312e81;
-            font-size: 0.9rem;
+            color: #1e293b;
+            font-size: 0.88rem;
         }
 
         .summary-list li {
@@ -202,25 +178,18 @@
 
         .summary-item {
             font-size: 0.85rem;
-            color: #881337;
-            background: rgba(255, 255, 255, 0.6);
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.85);
             padding: 6px 10px;
             border-radius: 6px;
-            border: 1px solid rgba(225, 29, 72, 0.15);
+            border: 1px solid #e2e8f0;
         }
 
         .summary-item strong {
-            color: #9f1239;
+            color: #1e3a8a;
         }
 
-        .summary-text {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #312e81;
-            line-height: 1.4;
-        }
-
-        /* Sub-section Blocks & Themes */
+        /* Sub-section Themes */
         .grammar-section {
             border-radius: 10px;
             padding: 14px;
@@ -228,32 +197,20 @@
             border: 1px solid transparent;
         }
 
-        .theme-green { background-color: #fafdfa; border-color: #c8e6c9; }
-        .theme-green .section-title { background-color: var(--c-green-bg); color: var(--c-green); }
+        .theme-navy { background-color: var(--c-navy-bg); border-color: var(--c-navy-border); }
+        .theme-navy .section-title { background-color: #dbeafe; color: var(--c-navy); }
 
-        .theme-blue { background-color: #f4f8fc; border-color: #bbdefb; }
-        .theme-blue .section-title { background-color: var(--c-blue-bg); color: var(--c-blue); }
+        .theme-teal { background-color: var(--c-teal-bg); border-color: var(--c-teal-border); }
+        .theme-teal .section-title { background-color: #dcfce7; color: var(--c-teal); }
 
-        .theme-purple { background-color: #faf5fc; border-color: #e1bee7; }
-        .theme-purple .section-title { background-color: var(--c-purple-bg); color: var(--c-purple); }
+        .theme-slate { background-color: var(--c-slate-bg); border-color: var(--c-slate-border); }
+        .theme-slate .section-title { background-color: #e2e8f0; color: var(--c-slate); }
 
-        .theme-orange { background-color: #fff9f8; border-color: #ffccbc; }
-        .theme-orange .section-title { background-color: var(--c-orange-bg); color: var(--c-orange); }
+        .theme-indigo { background-color: var(--c-indigo-bg); border-color: var(--c-indigo-border); }
+        .theme-indigo .section-title { background-color: #e0e7ff; color: var(--c-indigo); }
 
-        .theme-teal { background-color: #f2f9f8; border-color: #b2dfdb; }
-        .theme-teal .section-title { background-color: var(--c-teal-bg); color: var(--c-teal); }
-
-        .theme-amber { background-color: #fffdf5; border-color: #fef08a; }
-        .theme-amber .section-title { background-color: var(--c-amber-bg); color: var(--c-amber); }
-
-        .theme-red { background-color: #fff5f5; border-color: #feb2b2; }
-        .theme-red .section-title { background-color: var(--c-red-bg); color: var(--c-red); }
-
-        .theme-indigo { background-color: #f8fafc; border-color: #c7d2fe; }
-        .theme-indigo .section-title { background-color: var(--c-indigo-bg); color: var(--c-indigo); }
-
-        .theme-rose { background-color: #fff1f2; border-color: #fecdd3; }
-        .theme-rose .section-title { background-color: var(--c-rose-bg); color: var(--c-rose); }
+        .theme-rose { background-color: var(--c-rose-bg); border-color: var(--c-rose-border); }
+        .theme-rose .section-title { background-color: #ffe4e6; color: var(--c-rose); }
 
         .section-header-wrap {
             display: flex;
@@ -266,7 +223,7 @@
 
         .section-title {
             display: inline-block;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 6px;
@@ -295,8 +252,8 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #4a5568;
-            background-color: #edf2f7;
+            color: #475569;
+            background-color: #e2e8f0;
             padding: 2px 6px;
             border-radius: 4px;
             margin-top: 8px;
@@ -322,27 +279,27 @@
         .jp-sentence {
             font-size: 1rem;
             font-weight: 600;
-            color: #1a202c;
+            color: #0f172a;
             margin-bottom: 2px;
         }
 
         .highlight {
-            color: #be123c;
+            color: #1e3a8a;
             font-weight: 700;
-            background-color: #ffe4e6;
+            background-color: #dbeafe;
             padding: 0 3px;
             border-radius: 3px;
         }
 
         .en-sentence {
-            color: #4a5568;
+            color: #334155;
             margin-bottom: 8px;
             font-size: 0.85rem;
         }
 
         .vocab-entry {
             font-size: 0.85rem;
-            color: #2d3748;
+            color: #1e293b;
             line-height: 1.5;
             border-top: 1px dashed #e2e8f0;
             padding-top: 6px;
@@ -350,20 +307,39 @@
 
         .vocab-entry .nuance {
             font-style: italic;
-            color: #718096;
+            color: #64748b;
             display: block;
             margin-top: 2px;
+        }
+
+        .contrast-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #0f766e;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        .contrast-title {
+            font-weight: 700;
+            color: #0f766e;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
         }
 
         .click-hint {
             font-size: 0.75rem;
             font-weight: 600;
-            color: #718096;
+            color: #64748b;
             margin-top: 10px;
             align-self: flex-end;
         }
 
-        /* Vocabulary Card Grid Styling */
+        /* Vocabulary Card Styling */
         .category-badge {
             display: inline-flex;
             align-items: center;
@@ -374,12 +350,9 @@
             padding: 4px 10px;
             border-radius: 6px;
             margin-bottom: 10px;
+            background-color: #e2e8f0;
+            color: #334155;
         }
-
-        .badge-nature { background-color: var(--c-purple-bg); color: var(--c-purple); }
-        .badge-mastery { background-color: var(--c-amber-bg); color: var(--c-amber); }
-        .badge-domain { background-color: var(--c-emerald-bg); color: var(--c-emerald); }
-        .badge-authority { background-color: var(--c-sky-bg); color: var(--c-sky); }
 
         .vocab-grid {
             display: grid;
@@ -422,7 +395,7 @@
         .vocab-english {
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--c-indigo);
+            color: #1e3a8a;
         }
 
         .vocab-nuance {
@@ -432,7 +405,7 @@
             line-height: 1.3;
         }
 
-        /* Matrix Comparison Table */
+        /* Matrix Table */
         .matrix-container {
             overflow-x: auto;
             margin-top: 12px;
@@ -491,7 +464,7 @@
                     </ul>
                 </div>
 
-                <div class="grammar-section theme-orange">
+                <div class="grammar-section theme-navy">
                     <div class="section-title">1. Unfortunate Timing / Bad Luck</div>
                     <div class="grammar-block">
                         <div class="label">Core Meaning & Function</div>
@@ -515,7 +488,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-purple">
+                <div class="grammar-section theme-indigo">
                     <div class="section-title">2. Special Exception / Strong Trust</div>
                     <div class="grammar-block">
                         <div class="label">Core Meaning & Function</div>
@@ -589,18 +562,18 @@
                     </ul>
                 </div>
 
-                <div class="grammar-section theme-green">
+                <div class="grammar-section theme-teal">
                     <div class="section-title">にあたって / にあたり</div>
                     <div class="grammar-block">
                         <div class="label">Core Meaning & Function</div>
-                        <p>Marks forward-looking action, preparation, or mindset required immediately before taking on an important, formal, or life-changing event. It derives from the verb 当たる (to face / to encounter).</p>
+                        <p>Marks forward-looking action, preparation, or mindset required immediately before taking on an important, formal, or life-changing event.</p>
                         
                         <div class="label">Structure</div>
-                        <p>Noun / Verb (dictionary form) + <strong>にかぎって</strong> (or にあたり for more formal text)</p>
+                        <p>Noun / Verb (dictionary form) + <strong>にあたって</strong> (or にあたり)</p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Milestone events, official transitions, or public occasions (e.g., starting a business, moving, signing a contract, entering university, opening a ceremony).</p>
-                        <p><em>When NOT to use:</em> Everyday, trivial, or routine actions. Writing 「朝ごはんは食べるにあたって」 (Before eating breakfast) sounds unnatural because breakfast is not a solemn milestone. Additionally, it generally cannot take negative verbs.</p>
+                        <p><em>When to use:</em> Milestone events, official transitions, or public occasions.</p>
+                        <p><em>When NOT to use:</em> Everyday, trivial, or routine actions.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">新事業を始める<span class="highlight">にあたって</span>、十分な資金計画を立てる必要がある。</div>
@@ -614,18 +587,18 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-blue">
+                <div class="grammar-section theme-navy">
                     <div class="section-title">にあって</div>
                     <div class="grammar-block">
                         <div class="label">Core Meaning & Function</div>
-                        <p>Sets a specific, often extreme or unusual state, environment, or position, and describes how an action or state unfolds directly within those bounds. It derives from the verb 在る (to exist / to be located in a condition).</p>
+                        <p>Sets a specific, often extreme or unusual state, environment, or position, and describes how an action or state unfolds directly within those bounds.</p>
                         
                         <div class="label">Structure</div>
                         <p>Noun + <strong>にあって</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Formal speeches, literary writing, news reporting, or written essays to highlight a background condition or role (e.g., during a war, under strict constraints, in a position of leadership). It is frequently paired with も (〜にあっても) to mean "even under such conditions."</p>
-                        <p><em>When NOT to use:</em> Casual spoken Japanese or simple temporal expressions (e.g., use に or の時に for standard time frames like "when I was a student").</p>
+                        <p><em>When to use:</em> Formal speeches, literary writing, news reporting, or written essays to highlight a background condition or role.</p>
+                        <p><em>When NOT to use:</em> Casual spoken Japanese or simple temporal expressions.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">このような緊急事態<span class="highlight">にあっても</span>、彼は冷静さを失わなかった。</div>
@@ -639,18 +612,18 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-orange">
+                <div class="grammar-section theme-slate">
                     <div class="section-title">とあって</div>
                     <div class="grammar-block">
                         <div class="label">Core Meaning & Function</div>
-                        <p>States that because a particular, uncommon, or special circumstance exists, a logical or natural outcome follows. It stems from the verb 有る (to exist) preceded by the quotation/state particle と.</p>
+                        <p>States that because a particular, uncommon, or special circumstance exists, a logical or natural outcome follows.</p>
                         
                         <div class="label">Structure</div>
                         <p>Noun / Verb (plain form) + <strong>とあって</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Objective reporting of a special cause-and-effect relationship (e.g., rare fine weather causing crowded parks, a massive discount causing long queues, a visit by a celebrity attracting crowds).</p>
-                        <p><em>When NOT to use:</em> Speaker-centric actions, personal requests, commands, or expressions of personal volition (e.g., 「雨とあって、傘を買いなさい」 is incorrect). It focuses purely on observing a public or natural consequence.</p>
+                        <p><em>When to use:</em> Objective reporting of a special cause-and-effect relationship.</p>
+                        <p><em>When NOT to use:</em> Speaker-centric actions, personal requests, commands, or expressions of personal volition.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">久しぶりの晴天<span class="highlight">とあって</span>、公園は多くの家族連れで賑わっている。</div>
@@ -682,11 +655,16 @@
             <div class="card-face card-back">
                 
                 <div class="summary-box">
-                    <div class="summary-title">Summary</div>
-                    <p class="summary-text">Distinguishes 10 terms for high talent and expertise based on whether the focus is on <strong>raw innate ability</strong>, <strong>honed practical craft</strong>, <strong>mastery/status within a field</strong>, or <strong>academic authority</strong>.</p>
+                    <div class="summary-title">Quick Nuance Matrix</div>
+                    <div class="summary-grid">
+                        <div class="summary-item"><strong>天才 / 鬼才 / 逸材:</strong> Innate gift & natural talent</div>
+                        <div class="summary-item"><strong>達人 / 職人 / 熟練者:</strong> High skill & practical mastery</div>
+                        <div class="summary-item"><strong>巨匠 / 大家:</strong> Grand masters & field authorities</div>
+                        <div class="summary-item"><strong>玄人 / 有識者:</strong> Domain knowledge & insider status</div>
+                    </div>
                 </div>
 
-                <div class="category-badge badge-nature">1. Innate Gift & Natural Talent</div>
+                <div class="category-badge">1. Innate Gift & Natural Talent</div>
                 <div class="vocab-grid">
                     <div class="vocab-card">
                         <div class="vocab-head">
@@ -716,7 +694,7 @@
                     </div>
                 </div>
 
-                <div class="category-badge badge-mastery">2. High Skill & Practical Mastery</div>
+                <div class="category-badge">2. High Skill & Practical Mastery</div>
                 <div class="vocab-grid">
                     <div class="vocab-card">
                         <div class="vocab-head">
@@ -746,7 +724,7 @@
                     </div>
                 </div>
 
-                <div class="category-badge badge-domain">3. Grand Masters & Field Authorities</div>
+                <div class="category-badge">3. Grand Masters & Field Authorities</div>
                 <div class="vocab-grid">
                     <div class="vocab-card">
                         <div class="vocab-head">
@@ -767,7 +745,7 @@
                     </div>
                 </div>
 
-                <div class="category-badge badge-authority">4. Knowledge & Insider Experience</div>
+                <div class="category-badge">4. Knowledge & Insider Experience</div>
                 <div class="vocab-grid">
                     <div class="vocab-card">
                         <div class="vocab-head">
@@ -828,7 +806,7 @@
         </div>
     </div>
 
-    <!-- Card 4 (New) -->
+    <!-- Card 4 -->
     <div class="card-container">
         <div class="card" onclick="toggleCard(this)">
             
@@ -839,7 +817,7 @@
 
             <div class="card-face card-back">
                 
-                <div class="summary-box theme-rose-box">
+                <div class="summary-box">
                     <div class="summary-title">Quick Nuance Matrix</div>
                     <div class="summary-grid">
                         <div class="summary-item"><strong>といったらない:</strong> External scale / Indescribable</div>
@@ -851,7 +829,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-teal">
+                <div class="grammar-section theme-navy">
                     <div class="section-header-wrap">
                         <div class="section-title">1. といったらない</div>
                         <span class="nuance-tag">External Scale / Indescribable</span>
@@ -864,14 +842,13 @@
                         <p>Noun / Noun-equivalent / Adjective (i/na) + <strong>といったらない</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Highlights external scale, magnitude, or vivid scenes that surpass linguistic description. Works for objective conditions or recounting impactful events.</p>
+                        <p><em>When to use:</em> Highlights external scale, magnitude, or vivid scenes that surpass linguistic description.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">試験に合格したときの彼の嬉しさ<span class="highlight">といったらない</span>。</div>
                             <div class="en-sentence">When he passed the exam, his sheer joy was beyond description.</div>
                             <div class="vocab-entry">
                                 合格 = ごうかく = to pass an exam<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 嬉しさ = うれしさ = joy, gladness<br>
                                 <span class="nuance">Frames his observable happiness as overflowing beyond what words can capture.</span>
                             </div>
@@ -879,7 +856,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-amber">
+                <div class="grammar-section theme-slate">
                     <div class="section-header-wrap">
                         <div class="section-title">2. かぎりだ</div>
                         <span class="nuance-tag">Internal Subjective Peak</span>
@@ -892,14 +869,13 @@
                         <p>Subjective Emotion Adjectives (i-adj / na-adj) + <strong>かぎりだ</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Strictly marks the internal limit of a speaker's subjective emotion (e.g., 嬉しい, 悲しい, 心強い). Formal and sincere tone.</p>
+                        <p><em>When to use:</em> Strictly marks the internal limit of a speaker's subjective emotion (e.g., 嬉しい, 悲しい, 心強い).</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">遠方から友人が駆けつけてくれて、心強い<span class="highlight">かぎりだ</span>。</div>
                             <div class="en-sentence">Having my friend rush over from afar makes me feel immensely reassured.</div>
                             <div class="vocab-entry">
                                 駆けつける = かけつける = to rush to a location<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 心強い = こころづよい = reassuring, heartening<br>
                                 <span class="nuance">Expresses that internal emotional capacity for reassurance is completely full.</span>
                             </div>
@@ -907,7 +883,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-purple">
+                <div class="grammar-section theme-indigo">
                     <div class="section-header-wrap">
                         <div class="section-title">3. 極まる / 極まりない</div>
                         <span class="nuance-tag">Objective Peak / Critical Tone</span>
@@ -920,14 +896,13 @@
                         <p>Na-adjective stem (＋な) + <strong>極まる</strong> OR Na-adjective stem + <strong>極まりない</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Highly formal, written, or literary. Frequently conveys sharp criticism or formal censure toward bad manners or dangerous behavior rather than internal emotions.</p>
+                        <p><em>When to use:</em> Highly formal, written, or literary. Frequently conveys sharp criticism or formal censure toward bad manners.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">泥酔して公道で騒ぐとは、失礼<span class="highlight">極まりない</span>態度だ。</div>
                             <div class="en-sentence">Getting dead drunk and causing a racket on a public street is an attitude that is rude in the extreme.</div>
                             <div class="vocab-entry">
                                 泥酔 = でいすい = dead drunk, heavily intoxicated<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 公道 = こうどう = public road, highway<br>
                                 <span class="nuance">Evaluates an external behavior at the objective ceiling of rudeness.</span>
                             </div>
@@ -935,7 +910,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-red">
+                <div class="grammar-section theme-teal">
                     <div class="section-header-wrap">
                         <div class="section-title">4. てたまらない / てならない</div>
                         <span class="nuance-tag">Uncontrollable Urge / Sensation</span>
@@ -948,14 +923,13 @@
                         <p>Verb/Adjective (Te-form) + <strong>たまらない</strong> / <strong>ならない</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> Spontaneous loss of emotional/physical control. <strong>てたまらない</strong> leans toward unbearable physical sensations or strong desires; <strong>てならない</strong> leans toward irresistible psychological or intuitive feelings.</p>
+                        <p><em>When to use:</em> Spontaneous loss of emotional/physical control.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">故郷の母の病状がどうなっているか、心配で<span class="highlight">ならない</span>。</div>
                             <div class="en-sentence">I cannot help but feel deeply anxious about my mother's illness back home.</div>
                             <div class="vocab-entry">
                                 故郷 = こきょう = hometown, birthplace<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 病状 = びょうじょう = medical condition<br>
                                 <span class="nuance">Emphasizes an irresistible psychological anxiety welling up naturally.</span>
                             </div>
@@ -963,7 +937,7 @@
                     </div>
                 </div>
 
-                <div class="grammar-section theme-indigo">
+                <div class="grammar-section theme-slate">
                     <div class="section-header-wrap">
                         <div class="section-title">5. の至り (のいたり)</div>
                         <span class="nuance-tag">Formal Pinnacle of Status/Honor</span>
@@ -976,14 +950,13 @@
                         <p>Abstract Noun (e.g., 光栄, 若気, 赤面) + <strong>の至り</strong></p>
                         
                         <div class="label">Usage Notes & Nuance</div>
-                        <p><em>When to use:</em> High-register polite idiom reserved for pinnacles of honor, intense shame, or youthful indiscretion. Functions through fixed collocations.</p>
+                        <p><em>When to use:</em> High-register polite idiom reserved for pinnacles of honor, intense shame, or youthful indiscretion.</p>
 
                         <div class="example-block">
                             <div class="jp-sentence">このような栄誉ある賞をいただき、光栄<span class="highlight">の至り</span>でございます。</div>
                             <div class="en-sentence">Receiving such a prestigious award is the absolute height of honor for me.</div>
                             <div class="vocab-entry">
                                 栄誉 = えいよ = honor, glory<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 光栄 = こうえい = honor, privilege<br>
                                 <span class="nuance">Pinnacle register expressing the absolute summit of formal appreciation.</span>
                             </div>
@@ -1011,9 +984,151 @@
                             <div class="en-sentence">The disastrous scene of the accident was appalling, a sight truly unbearable to look at.</div>
                             <div class="vocab-entry">
                                 惨状 = さんじょう = disastrous scene, spectacle<br>
-                                <span class="nuance">Word = Kana = English</span><br>
                                 光景 = こうけい = scene, sight<br>
                                 <span class="nuance">Pairs with a perception verb (見る) to highlight a tragic scene impossible to endure visually.</span>
+                            </div>
+                        </div>
+
+                        <div class="contrast-box">
+                            <div class="contrast-title">Key Distinction: にたえない vs. といったらない</div>
+                            <p><strong>にたえない (Uncontainable / Unbearable):</strong> Focuses on the speaker's internal inability to suppress or hold back an intense emotion (e.g., 感謝にたえない = overwhelming gratitude) or sensory distress (見るにたえない = unbearable to look at).</p>
+                            <p><strong>といったらない (Indescribable Scale):</strong> Focuses on external scale and degree, emphasizing that a state or condition is so immense that words fail to describe it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Card 5 (New: Unbearability & Impulses) -->
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front pastel-5">
+                <div class="card-title">Unbearability & Impulses</div>
+                <div class="card-subtitle">てはいられない ・ てはかなわない ・ てたまらない ・ ずにはいられない</div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Quick Nuance Matrix</div>
+                    <div class="summary-grid">
+                        <div class="summary-item"><strong>てはいられない:</strong> "No time to sit around!" (Urgency)</div>
+                        <div class="summary-item"><strong>てはかなわない:</strong> "This situation is a pain!" (Complaint)</div>
+                        <div class="summary-item"><strong>てたまらない:</strong> "So itchy/anxious I can't stand it!" (Sensation)</div>
+                        <div class="summary-item"><strong>ずにはいられない:</strong> "Can't stop myself from acting!" (Impulse)</div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-navy">
+                    <div class="section-header-wrap">
+                        <div class="section-title">1. 〜てはいられない</div>
+                        <span class="nuance-tag">Urgency / Practical Duty</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses that time or external circumstances demand immediate movement or action ("cannot afford to stay in state X").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb (Te-form) + <strong>はいられない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Stopping passive sitting or idle waiting because duty, time limits, or pressing context requires immediate action.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">もうすぐ試験なのだから、遊んで<span class="highlight">はいられない</span>。</div>
+                            <div class="en-sentence">Since the exam is coming up soon, I can't afford to idle around playing.</div>
+                            <div class="vocab-entry">
+                                試験 = しけん = exam, test<br>
+                                遊ぶ = あそぶ = to play, to idle around<br>
+                                <span class="nuance">Highlights that time pressure demands ending idle activity immediately.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-rose">
+                    <div class="section-header-wrap">
+                        <div class="section-title">2. 〜てはかなわない</div>
+                        <span class="nuance-tag">Inconvenience / External Nuisance</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses strong complaint or irritation toward an external situation or nuisance that overwhelms patience ("cannot stand / bear situation X").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb / Adjective (Te-form) + <strong>はかなわない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Framing an external annoyance or burdensome situation as an intolerable pain to deal with.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">毎晩隣の部屋で騒がれて<span class="highlight">はかなわない</span>。</div>
+                            <div class="en-sentence">I can't stand them making noise in the room next door every night.</div>
+                            <div class="vocab-entry">
+                                隣 = となり = neighbor, next door<br>
+                                騒ぐ = さわぐ = to make noise, to cause a racket<br>
+                                <span class="nuance">Expresses direct complaint against an external nuisance.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-teal">
+                    <div class="section-header-wrap">
+                        <div class="section-title">3. 〜てたまらない</div>
+                        <span class="nuance-tag">Physiological / Direct Sensation</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses an overwhelming, irresistible internal physical sensation, emotion, or desire ("unbearably adj/sensation").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb / Adjective (Te-form) + <strong>たまらない</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Instinctive internal states (e.g., sleepy, itchy, aching to see someone) without necessarily blaming a third party.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">虫に刺されたところが痒くて<span class="highlight">たまらない</span>。</div>
+                            <div class="en-sentence">The bug bite is unbearably itchy.</div>
+                            <div class="vocab-entry">
+                                虫 = むし = insect, bug<br>
+                                刺される = さされる = to be bitten, to be stung<br>
+                                痒い = かゆい = itchy<br>
+                                <span class="nuance">Focuses on a raw, irresistible physical sensation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-section theme-indigo">
+                    <div class="section-header-wrap">
+                        <div class="section-title">4. 〜ずにはいられない</div>
+                        <span class="nuance-tag">Uncontrollable Impulse to Act</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses an inability to suppress an action or emotional output due to an overwhelming internal drive ("cannot help but do X").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb (Nai-stem) + <strong>ずにはいられない</strong> (する becomes せずにはいられない)</p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Spontaneous psychological impulses compelling physical action (e.g., laughing, crying, buying, complaining).</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">その映画の結末を見て、泣か<span class="highlight">ずにはいられなかった</span>。</div>
+                            <div class="en-sentence">Seeing the ending of that movie, I couldn't help but cry.</div>
+                            <div class="vocab-entry">
+                                映画 = えいが = movie, film<br>
+                                結末 = けつまつ = ending, conclusion<br>
+                                泣く = なく = to cry<br>
+                                <span class="nuance">Marks an irresistible internal emotion forcing physical expression (crying).</span>
                             </div>
                         </div>
                     </div>

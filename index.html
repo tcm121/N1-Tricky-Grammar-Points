@@ -112,10 +112,60 @@
 
         .card-front {
             display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 48px;
+            gap: 12px;
+        }
+
+        .card-front-info {
+            display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            flex-grow: 1;
+        }
+
+        .review-tracker {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
             justify-content: center;
-            min-height: 42px;
+            gap: 3px;
+            flex-shrink: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .review-status {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #64748b;
+            white-space: nowrap;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        .review-btn {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+            margin: 0;
+            display: block;
+            box-sizing: border-box;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .review-btn:hover {
+            background-color: #f1f5f9;
+            border-color: #94a3b8;
         }
 
         /* Front Theme Variants */
@@ -134,7 +184,7 @@
             box-sizing: border-box;
             transform: rotateY(180deg);
             background-color: var(--card-bg);
-            overflow-y: auto;
+            overflow: hidden;
             padding: 20px;
         }
 
@@ -476,11 +526,17 @@
 
         .range-summary-row {
             display: grid;
-            grid-template-columns: 130px 1fr 100px;
+            grid-template-columns: 1fr;
             padding: 8px 10px;
             border-radius: 6px;
             gap: 8px;
             align-items: center;
+        }
+
+        @media (min-width: 480px) {
+            .range-summary-row {
+                grid-template-columns: 130px 1fr 100px;
+            }
         }
 
         .range-summary-grammar {
@@ -743,11 +799,17 @@
 <div class="container">
 
     <!-- Card 1 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-1">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-1">
-                <div class="card-title">にかぎって</div>
+                <div class="card-front-info">
+                    <div class="card-title">にかぎって</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-1')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -841,11 +903,17 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-2">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-2">
-                <div class="card-title">にあたって ・ にあって ・ とあって</div>
+                <div class="card-front-info">
+                    <div class="card-title">にあたって ・ にあって ・ とあって</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-2')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -941,12 +1009,18 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-3">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-3">
-                <div class="card-title">Talent & Expertise Words</div>
-                <div class="card-subtitle">天才, 鬼才, 逸材, 達人, 職人, 巨匠, 大家, 熟練者, 玄人, 有識者</div>
+                <div class="card-front-info">
+                    <div class="card-title">Talent & Expertise Words</div>
+                    <div class="card-subtitle">天才, 鬼才, 逸材, 達人, 職人, 巨匠, 大家, 熟練者, 玄人, 有識者</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-3')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -1104,12 +1178,18 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-4">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-4">
-                <div class="card-title">Extreme Degree & Pinnacles</div>
-                <div class="card-subtitle">といったらない ・ かぎりだ ・ 極まる / 極まりない ・ てたまらない / てならない ・ の至り ・ にたえない</div>
+                <div class="card-front-info">
+                    <div class="card-title">Extreme Degree & Pinnacles</div>
+                    <div class="card-subtitle">といったらない ・ かぎりだ ・ 極まる / 極まりない ・ てたまらない / てならない ・ の至り ・ にたえない</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-4')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -1301,12 +1381,18 @@
     </div>
 
     <!-- Card 5 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-5">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-5">
-                <div class="card-title">Unbearability & Impulses</div>
-                <div class="card-subtitle">てはいられない ・ てはかなわない ・ てたまらない ・ ずにはいられない</div>
+                <div class="card-front-info">
+                    <div class="card-title">Unbearability & Impulses</div>
+                    <div class="card-subtitle">てはいられない ・ てはかなわない ・ てたまらない ・ ずにはいられない</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-5')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -1438,12 +1524,18 @@
     </div>
 
     <!-- Card 6 -->
-    <div class="card-container">
+    <div class="card-container" data-card-id="card-6">
         <div class="card" onclick="toggleCard(this)">
             
             <div class="card-face card-front pastel-1">
-                <div class="card-title">Range & Scope Comparison</div>
-                <div class="card-subtitle">にかけて ・ にわたって ・ に至るまで ・ を通じて ・ におよぶ</div>
+                <div class="card-front-info">
+                    <div class="card-title">Range & Scope Comparison</div>
+                    <div class="card-subtitle">にかけて ・ にわたって ・ に至るまで ・ を通じて ・ におよぶ</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-6')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
             </div>
 
             <div class="card-face card-back">
@@ -1739,6 +1831,49 @@
             cardElement.classList.remove('flipped');
         }
     }
+
+    function updateCardReviewDisplay(cardId) {
+        const cardContainer = document.querySelector(`[data-card-id="${cardId}"]`);
+        if (!cardContainer) return;
+
+        const statusEl = cardContainer.querySelector('.review-status');
+        const lastReviewedStr = localStorage.getItem(`review_${cardId}`);
+
+        if (!lastReviewedStr) {
+            statusEl.textContent = 'Not yet reviewed';
+            return;
+        }
+
+        const lastReviewedDate = new Date(parseInt(lastReviewedStr, 10));
+        const today = new Date();
+        
+        const date1 = new Date(lastReviewedDate.getFullYear(), lastReviewedDate.getMonth(), lastReviewedDate.getDate());
+        const date2 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        
+        const diffTime = date2 - date1;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays === 0) {
+            statusEl.textContent = 'Reviewed today';
+        } else if (diffDays === 1) {
+            statusEl.textContent = 'Reviewed 1 day ago';
+        } else {
+            statusEl.textContent = `Reviewed ${diffDays} days ago`;
+        }
+    }
+
+    function markReviewed(event, cardId) {
+        event.stopPropagation();
+        localStorage.setItem(`review_${cardId}`, Date.now().toString());
+        updateCardReviewDisplay(cardId);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-card-id]').forEach(container => {
+            const cardId = container.getAttribute('data-card-id');
+            updateCardReviewDisplay(cardId);
+        });
+    });
 </script>
 
 </body>

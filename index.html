@@ -34,6 +34,10 @@
             --c-rose-bg: #fff1f2;
             --c-rose-border: #fecdd3;
 
+            --c-purple: #581c87;
+            --c-purple-bg: #faf5ff;
+            --c-purple-border: #e9d5ff;
+
             /* Range & Scope Grammar Colors */
             --color-nikakete: #2563eb;
             --color-nikakete-bg: #eff6ff;
@@ -261,6 +265,9 @@
 
         .theme-rose { background-color: var(--c-rose-bg); border-color: var(--c-rose-border); }
         .theme-rose .section-title { background-color: #ffe4e6; color: var(--c-rose); }
+
+        .theme-purple { background-color: var(--c-purple-bg); border-color: var(--c-purple-border); }
+        .theme-purple .section-title { background-color: #f3e8ff; color: var(--c-purple); }
 
         .section-header-wrap {
             display: flex;
@@ -1530,7 +1537,7 @@
             <div class="card-face card-front pastel-1">
                 <div class="card-front-info">
                     <div class="card-title">Range & Scope Comparison</div>
-                    <div class="card-subtitle">にかけて ・ にわたって ・ に至るまで ・ を通じて ・ におよぶ</div>
+                    <div class="card-subtitle">にかかって ・ にわたって ・ に至るまで ・ を通じて ・ におよぶ</div>
                 </div>
                 <div class="review-tracker">
                     <button class="review-btn" onclick="markReviewed(event, 'card-6')">Mark Reviewed</button>
@@ -1550,7 +1557,7 @@
                         <!-- 1. Nikakete Row -->
                         <div class="range-summary-row" style="background: var(--color-nikakete-bg);">
                             <div class="range-summary-grammar" style="color: var(--color-nikakete);">
-                                〜にかけて
+                                〜にかかって
                                 <span>A から B にかけて</span>
                             </div>
                             <div class="range-summary-core">Fluid / continuous span bridging two boundary points.</div>
@@ -1636,7 +1643,7 @@
                 <!-- 1. にかけて -->
                 <div class="inner-card nikakete">
                     <div class="inner-card-header">
-                        <span class="inner-card-title">1. 〜にかけて (Nikakete)</span>
+                        <span class="inner-card-title">1. 〜にかかって (Nikakete)</span>
                         <span class="inner-card-subtitle">Fluid Span Between Two Boundaries</span>
                     </div>
                     <div class="diagram-area">
@@ -2187,6 +2194,181 @@
                                 <td class="matrix-word">〜ままでは</td>
                                 <td>Warning / negative conditional outcome</td>
                                 <td>このままでは失敗する (if left as is, it'll fail)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Card 9 (3 Meanings of もの) -->
+    <div class="card-container" data-card-id="card-9">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front pastel-3">
+                <div class="card-front-info">
+                    <div class="card-title">「もの」の3つの主な意味</div>
+                    <div class="card-subtitle">1. Emotional Emphasis / Excuse ・ 2. Physical Object ・ 3. Defined Archetype (者)</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-9')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Quick Nuance Matrix</div>
+                    <div class="summary-grid">
+                        <div class="summary-item"><strong>1. Emotional Emphasis / Excuse:</strong> Personal conviction, moral judgment, or defensive reason ("because...")</div>
+                        <div class="summary-item"><strong>2. Physical / Concrete Object:</strong> Tangible, touchable item nominalization (distinct from abstract こと)</div>
+                        <div class="summary-item"><strong>3. Defined Archetype (者):</strong> "Those who...", "he who...", or "anyone who" fits a specific condition</div>
+                    </div>
+                </div>
+
+                <!-- Meaning 1: Emotional Emphasis / Excuse -->
+                <div class="grammar-section theme-teal">
+                    <div class="section-header-wrap">
+                        <div class="section-title">1. Emotional Emphasis & Personal Excuse</div>
+                        <span class="nuance-tag">Sentence-Ending Particle</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Adds personal conviction, moral emphasis ("should/shouldn't"), or an emotive, defensive justification ("because...") when placed at the end of a clause.</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb (Dictionary / Nai / Ta) + <strong>ものじゃない / ものだ</strong> | Verb / Noun + <strong>(んだ)もの / (んだ)もん</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Strongly stating how people ought to act, or offering a defensive reason for an action or mistake.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">そんなに愚痴ばかり言う<span class="highlight">もの</span>じゃない。</div>
+                            <div class="en-sentence">You shouldn't complain so much.</div>
+                            <div class="vocab-entry">
+                                愚痴 = ぐち = grumble, idle complaint<br>
+                                言う = いう = to say, to speak<br>
+                                <span class="nuance">Adds a layer of strong personal conviction and moral emphasis.</span>
+                            </div>
+                        </div>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">遅刻したくなかったけれど、電車が止まってしまったんだ<span class="highlight">もの</span>。</div>
+                            <div class="en-sentence">I didn't want to be late, but the train stopped!</div>
+                            <div class="vocab-entry">
+                                遅刻 = ちこく = lateness, tardiness<br>
+                                止まる = とまる = to stop, to come to a halt<br>
+                                <span class="nuance">Offers an external event as an emotive, defensive excuse.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meaning 2: Physical / Concrete Object -->
+                <div class="grammar-section theme-navy">
+                    <div class="section-header-wrap">
+                        <div class="section-title">2. Physical / Concrete Object</div>
+                        <span class="nuance-tag">Concrete Nominalizer</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Acts as a general noun referring to physical, touchable, or countable items without naming them explicitly. Contrast with <strong>こと</strong> (abstract ideas/events).</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Adjective / Clause + <strong>もの</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Referring to tangible goods, tools, souvenirs, or physical objects available or handled in a space.</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">手元にある<span class="highlight">もの</span>だけで工夫して作ってみる。</div>
+                            <div class="en-sentence">I will try to improvise and make it using only the items I have on hand.</div>
+                            <div class="vocab-entry">
+                                手元 = てもと = at hand, nearby<br>
+                                工夫 = くふう = improvising, scheme, device<br>
+                                <span class="nuance">Refers generally to physical tools or materials without itemizing them.</span>
+                            </div>
+                        </div>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">壊れやすい<span class="highlight">もの</span>ですから、取り扱いにご注意ください。</div>
+                            <div class="en-sentence">Because it is a fragile object, please handle it with care.</div>
+                            <div class="vocab-entry">
+                                壊れる = こわれる = to break, to be damaged<br>
+                                取り扱い = とりあつかい = handling, management<br>
+                                <span class="nuance">Refers directly to physical goods or items subject to spatial handling.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meaning 3: Defined Archetype (者) -->
+                <div class="grammar-section theme-purple">
+                    <div class="section-header-wrap">
+                        <div class="section-title">3. Defined Archetype (者)</div>
+                        <span class="nuance-tag">Formal / Literary Person Category</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Refers to "the type of person who...", "those who...", or "he who..." defined entirely by the action or condition that precedes it (kanji: <strong>者</strong>).</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>[Qualifying Verb / Adjective] + <strong>者 (もの)</strong></p>
+                        
+                        <div class="label">Usage Notes & Nuance</div>
+                        <p><em>When to use:</em> Proverbial statements, rules, regulations, or literary works. Never points to a specific individual (unlike 人 / ひと).</p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">違反した<span class="highlight">者</span>は、直ちに退場とします。</div>
+                            <div class="en-sentence">Anyone who commits a violation will be asked to leave immediately.</div>
+                            <div class="vocab-entry">
+                                違反 = いはん = violation, infraction<br>
+                                退場 = たいじょう = leaving, ejection<br>
+                                <span class="nuance">Sets a rule applying to anyone categorized as a violator.</span>
+                            </div>
+                        </div>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">あきらめない<span class="highlight">者</span>だけに、道は開かれる。</div>
+                            <div class="en-sentence">The path opens only for those who do not give up.</div>
+                            <div class="vocab-entry">
+                                あきらめる = あきらめる = to give up, abandon<br>
+                                開く = ひらく = to open, unlock<br>
+                                <span class="nuance">Refers to the archetype of persistent people who don't quit.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="matrix-container">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Primary Nuance</th>
+                                <th>Key Formula & Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="matrix-word">1. Emotional Emphasis / Excuse</td>
+                                <td>Personal conviction, moral standard ("shouldn't"), or defensive excuse ("because...")</td>
+                                <td>愚痴を言うものじゃない / 電車が止まったんだもの</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">2. Physical Concrete Object</td>
+                                <td>Tangible, touchable object or physical item (vs. abstract こと)</td>
+                                <td>手元にあるもの / 壊れやすいもの</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">3. Defined Archetype (者)</td>
+                                <td>"Those who...", "he who...", "anyone who fits X condition"</td>
+                                <td>違反した者 / あきらめない者</td>
                             </tr>
                         </tbody>
                     </table>

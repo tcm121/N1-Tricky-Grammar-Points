@@ -2380,6 +2380,213 @@
         </div>
     </div>
 
+        <!-- Card 10 (High-Frequency Correlated Pairs: 呼応の副詞 / 呼応表現) -->
+    <div class="card-container" data-card-id="card-10">
+        <div class="card" onclick="toggleCard(this)">
+            
+            <div class="card-face card-front pastel-5">
+                <div class="card-front-info">
+                    <div class="card-title">Essential Correlated Pairs (呼応表現)</div>
+                    <div class="card-subtitle">〜かというと ・ 〜からといって ・ たとえ〜ても ・ 〜ば〜ほど ・ 〜すら／〜さえ</div>
+                </div>
+                <div class="review-tracker">
+                    <button class="review-btn" onclick="markReviewed(event, 'card-10')">Mark Reviewed</button>
+                    <span class="review-status">Not yet reviewed</span>
+                </div>
+            </div>
+
+            <div class="card-face card-back">
+                
+                <div class="summary-box">
+                    <div class="summary-title">Quick Nuance Matrix</div>
+                    <div class="summary-grid">
+                        <div class="summary-item"><strong>1. 〜かというと ＋ 必ずしも…ない:</strong> Questioning a premise or strict rule ("If you ask whether... not necessarily")</div>
+                        <div class="summary-item"><strong>2. 〜からといって ＋ わけではない:</strong> Refuting an automatic result from a valid cause ("Just because... doesn't mean")</div>
+                        <div class="summary-item"><strong>3. たとえ〜ても ＋ 決して…ない:</strong> Total denial under extreme hypothesized conditions ("Even if... by no means")</div>
+                        <div class="summary-item"><strong>4. 〜ば〜ほど ＋ ますます:</strong> Proportional shift where variable A drives variable B ("The more... the more")</div>
+                        <div class="summary-item"><strong>5. 〜すら／〜さえ ＋ ましてや:</strong> Extrapolating from an extreme baseline ("Even X... let alone Y")</div>
+                    </div>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="grammar-section theme-navy">
+                    <div class="section-header-wrap">
+                        <div class="section-title">1. Rhetorical Hedge (Questioning Premise)</div>
+                        <span class="nuance-tag">〜かというと ＋ 必ずしも〜ない</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Sets up a hypothetical question about a standard rule or assumption, resolving with a soft, partial negation ("If you ask whether X is strictly true... it isn't necessarily so").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb / Adj / Noun + <strong>かというと (かといえば)</strong> ＋ <strong>必ずしも〜ない / とは限らない / わけではない</strong></p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">子育てをするのが母親でなくてはならない<span class="highlight">かというと</span>、必ずしもそうではない。</div>
+                            <div class="en-sentence">If you ask whether child-rearing must strictly be done by the mother, I don't think that is necessarily the case.</div>
+                            <div class="vocab-entry">
+                                育児 = いくじ = childcare<br>
+                                <span class="nuance">Refers specifically to the care, nursing, and raising of babies and young children.</span><br>
+                                母親 = ははおや = mother<br>
+                                <span class="nuance">Formal or objective term for a mother, commonly used in general discussions or written text.</span><br>
+                                子育て = こそだて = child-rearing / raising children<br>
+                                <span class="nuance">A broader, everyday term covering the overall process of raising a child from infancy through youth.</span><br>
+                                必ずしも = かならずしも = not necessarily (used with a negative)<br>
+                                <span class="nuance">Adverb used to indicate a partial exception or to hedge an absolute statement, almost always paired with 〜ない, 〜とは言えない, or 〜わけではない.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="grammar-section theme-rose">
+                    <div class="section-header-wrap">
+                        <div class="section-title">2. Conditional Exception (Reason vs. Outcome)</div>
+                        <span class="nuance-tag">〜からといって ＋ 〜わけではない</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Accepts a reason or premise as true, but refutes that a specific result automatically follows ("Just because X is true, Y doesn't automatically follow").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb / Adj / Noun + <strong>だからといって</strong> ＋ <strong>〜わけではない / 〜とは限らない / 〜ということではない</strong></p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">日本語の文法を熟知している<span class="highlight">からといって</span>、上手に話せるわけではない。</div>
+                            <div class="en-sentence">Just because you know Japanese grammar inside out, it doesn't mean you can speak fluently.</div>
+                            <div class="vocab-entry">
+                                熟知 = じゅくち = detailed knowledge, thorough familiarity<br>
+                                <span class="nuance">Knowing a subject or field inside out through deep study or long experience.</span><br>
+                                文法 = ぶんぽう = grammar<br>
+                                <span class="nuance">Refers to grammatical structure and rules.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="grammar-section theme-indigo">
+                    <div class="section-header-wrap">
+                        <div class="section-title">3. Extreme Hypothesized Condition</div>
+                        <span class="nuance-tag">たとえ（仮に）〜ても ＋ 決して〜ない</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Sets up an extreme hypothetical scenario only to flatly deny its possibility or truth across the board ("Even if X were true, Y would by no means change").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p><strong>たとえ / 仮に / 万一</strong> ＋ Verb/Adj (Te-form + も) ＋ <strong>決して〜ない / 全く〜ない / 少しも〜ない</strong></p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence"><span class="highlight">仮に</span>その説が正しかった<span class="highlight">としても</span>、結論は決して変わらない。</div>
+                            <div class="en-sentence">Even assuming that theory were correct, the conclusion would by no means change.</div>
+                            <div class="vocab-entry">
+                                仮に = かりに = hypothetically, assuming for argument's sake<br>
+                                <span class="nuance">Adverb used to introduce an assumption or temporary scenario to test a logic chain.</span><br>
+                                説 = せつ = theory, opinion<br>
+                                <span class="nuance">A hypothesis, proposition, or view put forward.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="grammar-section theme-teal">
+                    <div class="section-header-wrap">
+                        <div class="section-title">4. Proportional & Progressive Change</div>
+                        <span class="nuance-tag">〜ば〜ほど ＋ ますます（いっそう）</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Expresses that as one variable shifts in degree, another variable automatically shifts alongside it ("The more X, the more Y").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Verb (Ba-form) ＋ Verb (Dict-form) ＋ <strong>ほど</strong> ＋ <strong>ますます / 一層 (いっそう) / さらに</strong></p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">専門知識が深まれ<span class="highlight">ば</span>深まる<span class="highlight">ほど</span>、己の無知をますます実感するものだ。</div>
+                            <div class="en-sentence">The deeper one's specialized knowledge grows, the more keenly one realizes one's own ignorance.</div>
+                            <div class="vocab-entry">
+                                専門知識 = せんもんちしき = specialized knowledge, expertise<br>
+                                <span class="nuance">Technical domain knowledge acquired through professional study.</span><br>
+                                一層 = いっそう = all the more, much more<br>
+                                <span class="nuance">Adverb indicating a step-up in degree or intensity compared to a previous state.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="grammar-section theme-purple">
+                    <div class="section-header-wrap">
+                        <div class="section-title">5. High-Degree Extrapolation</div>
+                        <span class="nuance-tag">〜すら／〜さえ ＋ ましてや〜</span>
+                    </div>
+                    <div class="grammar-block">
+                        <div class="label">Core Meaning & Function</div>
+                        <p>Takes an obvious baseline fact or extreme minimum and uses it to emphasize that a lesser or secondary thing goes without saying ("Even X cannot... let alone Y").</p>
+                        
+                        <div class="label">Structure</div>
+                        <p>Noun ＋ <strong>すら / さえ</strong> ＋ <strong>ましてや〜（はずがない / ない） / 言うまでもなく</strong></p>
+
+                        <div class="example-block">
+                            <div class="jp-sentence">専門家<span class="highlight">すら</span>解明できていないのだから、<span class="highlight">ましてや</span>素人にわかるはずがない。</div>
+                            <div class="en-sentence">Since even experts haven't been able to solve it, let alone an amateur understanding it.</div>
+                            <div class="vocab-entry">
+                                専門家 = せんもんか = expert, specialist<br>
+                                <span class="nuance">Person with dedicated training and qualifications in a specialized field.</span><br>
+                                素人 = しろと = amateur, layman<br>
+                                <span class="nuance">An uninitiated or inexperienced person; direct contrast to 玄人 / 専門家.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="matrix-container">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Opening Trigger</th>
+                                <th>Natural Resolution Pair</th>
+                                <th>Discourse Function</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="matrix-word">1. 〜かというと / かといえば</td>
+                                <td>必ずしも〜ない / そうとは言えない</td>
+                                <td>Questions/softens a strict premise or rule</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">2. 〜からといって</td>
+                                <td>〜わけではない / 〜とは限らない</td>
+                                <td>Refutes an automatic result from a cause</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">3. たとえ / 仮に 〜 ても</td>
+                                <td>決して〜ない / 全く〜ない</td>
+                                <td>Total denial under hypothesized condition</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">4. 〜ば 〜 ほど</td>
+                                <td>ますます 〜 / いっそう 〜</td>
+                                <td>Proportional parallel shift between variables</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-word">5. 〜すら / 〜さえ</td>
+                                <td>ましてや 〜 / 言うまでもなく 〜</td>
+                                <td>Extrapolates to an obvious secondary outcome</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="click-hint">Click to flip back ↵</div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 <script>
